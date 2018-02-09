@@ -10,9 +10,16 @@ namespace VPShelter
     {
 
         //properties:
-        public int VolunteerExperienceLevel {get;set;}
+        public int VolunteerExperienceLevel { get; set; }
         public int YearsVolunteering { get; set; }
 
+        //constructors:
+        public Volunteer(string name, int exlevel, int years)
+        {
+            this.Name = name;
+            this.VolunteerExperienceLevel = exlevel;
+            this.YearsVolunteering = years;
+        }
 
         //volunteer inherited methods:
         public override void CheckIn()
@@ -31,6 +38,12 @@ namespace VPShelter
         {
             VolunteerExperienceLevel++;
             Console.WriteLine("Thanks for attending a training session!  Your volunteer level is now " + VolunteerExperienceLevel);
+        }
+
+        public void ViewScore()
+        {
+            Console.WriteLine("Your volunteer level is currently {0} out of ten.  " +
+                "\nKeep helping animals find homes to inprove the rate!", VolunteerExperienceLevel);
         }
 
         //volunteer methods:

@@ -42,11 +42,19 @@ namespace VPShelter
             Console.WriteLine("Thank you for helping to better train your volunteers.  Your shelter's adoption rate has increased!");
         }
 
-        //manager methods:
-        public void Adoption(VirtualPet pet)
+        public override void ViewScore()
         {
-            Console.WriteLine(pet + " has found a happy, loving home.");
+            Console.WriteLine("Your adoption rate is currently {0} out of ten.  " +
+                "\nKeep helping animals find homes to inprove the rate!", AdoptionRate);
         }
+
+        //manager methods:
+        public void Adoption(string name)
+        {
+            Console.WriteLine("Congratulations! " + name + " has found a happy, loving home.");
+        }
+
+      
 
     }
 }

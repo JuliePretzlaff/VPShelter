@@ -23,8 +23,8 @@ namespace VPShelter
         public Cat(string name)
         {
             this.Name = name;
-            this.Diet = "doog food";
-            this.Type = "dog";
+            this.Diet = "cat food";
+            this.Type = "cat";
         }
 
         //constructor to set status bools:
