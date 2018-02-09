@@ -10,6 +10,11 @@ namespace VPShelter
     {
         static void Main(string[] args)
         {
+            Dog Muffin = new Dog();
+            EmployeeClass pete = new EmployeeClass();
+
+            
+            pete.Feed(Muffin.IsHungry);
         }
     }
 }
