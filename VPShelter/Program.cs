@@ -38,19 +38,19 @@ namespace VPShelter
             juliesVPShelter.AllManagers = AllManagers;
 
             //instantiating 3 new dogs to live in the shelter and adding them each to the list as they're created.
-            Dog daisy = new Dog("Daisy", 12);
+            Dog daisy = new Dog("Daisy", 12, "fluffy");
             AllDogs.Add(daisy);
-            Dog trixie = new Dog("Trixie", 7);
+            Dog trixie = new Dog("Trixie", 7, "excited");
             AllDogs.Add(trixie);
-            Dog opie = new Dog("Opie", 8);
+            Dog opie = new Dog("Opie", 8, "cuddly");
             AllDogs.Add(opie);
 
             //instantiating 3 new cats to live in the shelter and adding them each to the cat list:
-            Cat buttons = new Cat("Buttons", 4);
+            Cat buttons = new Cat("Buttons", 4, "serpent-like");
             AllCats.Add(buttons);
-            Cat bearCat = new Cat("Bearcat", 2);
+            Cat bearCat = new Cat("Bearcat", 2, "a nusence");
             AllCats.Add(bearCat);
-            Cat gucci = new Cat("Gucci", 12);
+            Cat gucci = new Cat("Gucci", 12, "friendly");
             AllCats.Add(gucci);
 
             //instantiating 3 volunteers and adding them to the list:

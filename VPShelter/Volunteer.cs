@@ -40,7 +40,7 @@ namespace VPShelter
             Console.WriteLine("Thanks for attending a training session!  Your volunteer level is now " + VolunteerExperienceLevel);
         }
 
-        public void ViewScore()
+        public override void ViewScore()
         {
             Console.WriteLine("Your volunteer level is currently {0} out of ten.  " +
                 "\nKeep helping animals find homes to inprove the rate!", VolunteerExperienceLevel);

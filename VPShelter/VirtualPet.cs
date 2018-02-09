@@ -19,7 +19,7 @@ namespace VPShelter
 
         public bool IsHungry { get; set; }
         public bool IsThirsty { get; set; }
-        public bool IsClean { get; set; }
+        public bool IsBored { get; set; }
         public bool IsAdopted { get; set; }
 
         //consturctors:
@@ -34,20 +34,20 @@ namespace VPShelter
             this.Description = description;
         }
 
-        public VirtualPet(string name, string description, bool hunger, bool thirst, bool clean)
+        public VirtualPet(string name, string description, bool hunger, bool thirst, bool bored)
         {
             this.Name = name;
             this.Description = description;
             this.IsHungry = hunger;
             this.IsThirsty = thirst;
-            this.IsClean = clean;
+            this.IsBored = bored;
         }
 
-        public VirtualPet(bool hunger, bool thirst, bool clean)
+        public VirtualPet(bool hunger, bool thirst, bool bored)
         {
             this.IsHungry = hunger;
             this.IsThirsty = thirst;
-            this.IsClean = clean;
+            this.IsBored = bored;
             this.IsAdopted = false;
         }
     }

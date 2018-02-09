@@ -23,6 +23,8 @@ namespace VPShelter
 
         public abstract void Training();
 
+        public abstract void ViewScore();
+       
 
     }
 }

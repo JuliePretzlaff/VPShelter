@@ -29,10 +29,11 @@ namespace VPShelter
         }
 
         //constructor to set status bools:
-        public Dog(string name, int age) : base(false, false, true)
+        public Dog(string name, int age, string description) : base(false, false, true)
         {
             this.Name = name;
             this.Age = age;
+            this.Description = description;
         }
     }
 }
