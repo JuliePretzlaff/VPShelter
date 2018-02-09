@@ -20,18 +20,18 @@ namespace VPShelter
         }
 
         //constructor to set type and diet:
-        public Cat(string name, int age)
+        public Cat(string name)
         {
             this.Name = name;
-            this.Age = age;
             this.Diet = "doog food";
             this.Type = "dog";
         }
 
         //constructor to set status bools:
-        public Cat(string name) : base(false, false, true)
+        public Cat(string name, int age) : base(false, false, true)
         {
             this.Name = name;
+            this.Age = age;
         }
     }
 }

@@ -9,8 +9,19 @@ namespace VPShelter
     public class Manager : EmployeeClass
     {
         //manager properties:
+
         int YearsAtJob { get; set; }
         int AdoptionRate { get; set; }
+
+
+        //constructors:
+        public Manager(string name, int rate, int years)
+        {
+            this.Name = name;
+            this.AdoptionRate = rate;
+            this.YearsAtJob = years;
+        }
+
 
         //inherited methods:
         public override void CheckIn()

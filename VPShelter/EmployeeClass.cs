@@ -6,42 +6,23 @@ using System.Threading.Tasks;
 
 namespace VPShelter
 {
-    public class EmployeeClass
+    public abstract class EmployeeClass
     {
         //invisible fields
 
         //properties:
+        public string Name { get; set; }
         public int EmployeeNumber { get; set; }
 
 
 
         //methods:
-        public void Feed(bool hunger)
-        {
-            if (hunger == true)
-            {
-                hunger = false;
-                Console.WriteLine("The pet is now full!");
-            }
-            else
-            {
-                Console.WriteLine("The pet is not hungry!");
-            }
-        }
+        public abstract void CheckIn();
 
-        public void Water(bool thirst)
-              {
-            if (thirst == true)
-            {
-                thirst = false;
-                Console.WriteLine("The pet is no longer thirsty!");
-            }
-            else
-            {
-                Console.WriteLine("The pet is not thirsty!");
-            }
-        }
-        //public void Clean();
+        public abstract void CheckOut();
+
+        public abstract void Training();
+
 
     }
 }
