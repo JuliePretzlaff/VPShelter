@@ -10,19 +10,12 @@ namespace VPShelter
     {
         static void Main(string[] args)
         {
-            //volunteer methods working on animals bools??
-            /////on which pet?
-            //animal status show
-            /////for all animals
-            //test
-            //make sure requirements are met
-
             //example on how to call a method...might need this.
             //Dog Muffin = new Dog();
             //EmployeeClass pete = new EmployeeClass();
             //pete.Feed(Muffin.IsHungry);
 
-            //instantiate new object of VPS in order to be able to call methods from that class to print lists of anmials"
+            //instantiate new object of VPS in order to be able to call methods from that class to print lists of anmials
             VirtualPetShelter juliesVPShelter = new VirtualPetShelter();
 
             //instantiate all lists so that I can fill them with obejcts:
@@ -76,7 +69,7 @@ namespace VPShelter
                 "\nTo log in, please type \"1\" for Manager and \"2\" for volunteer.");
             int userChoice = int.Parse(Console.ReadLine());
 
-            //manager choice/menu:
+            //manager choice variable/menu:
             if (userChoice == 1)
             {
                 int managerChoice;
@@ -111,14 +104,17 @@ namespace VPShelter
                             break;
 
                         case 4:
-                            //choose a pet for adoption and call adoption method
+                            //choose a pet for adoption and call adoption method.  I wanted to put all of this inside method
+                            //in manager class but wasn't able to without instantiating all Dog and Cat object there 
+                            //(would instantiating a Dog daisy = new Dog() in two separate classes have it point to the same object of Daisty?
+                            //or would it result in two distinct Dog objects, both named daisy?)
                             Console.WriteLine("Type \"1\" for dog and \"2\" for cat:");
                             string animalAdopt;
                             string petAdopt;
                             animalAdopt = Console.ReadLine().ToLower();
                             if (animalAdopt == "1")
                             {
-                                Console.WriteLine("Which dog is being adopted?");
+                                Console.WriteLine("Which dog is being adopted?  Please type their name: ");
                                 Console.WriteLine(daisy.Name + ": " + daisy.Description);
                                 Console.WriteLine(trixie.Name + ": " + trixie.Description);
                                 Console.WriteLine(opie.Name + ": " + opie.Description);
@@ -166,7 +162,7 @@ namespace VPShelter
                                     Console.WriteLine(name);
                                 }
                             }
-                            if (rosterChoice == 1)
+                            if (rosterChoice == 4)
                             {
                                 foreach (string name in juliesVPShelter.ManagerRoster())
                                 {
@@ -181,7 +177,19 @@ namespace VPShelter
                             break;
 
                         case 7:
-                            //create method to view animal status
+                            Console.WriteLine("\nCurrent Status of Dogs:");
+                            //Console.WriteLine(daisy.Name + ": Is hungry?" + daisy.IsHungry + " Is thirsty? " + daisy.IsThirsty + daisy.IsBored);
+                            Console.WriteLine("Name    Is Hungry?    Is Thirsty?    Is Bored?");
+                            Console.WriteLine("______________________________________________");
+                            Console.WriteLine(daisy.Name + "     " + daisy.IsHungry + "         " + daisy.IsThirsty + "           " + daisy.IsBored);
+                            Console.WriteLine(trixie.Name + "    " + trixie.IsHungry + "         " + trixie.IsThirsty + "           " + trixie.IsBored);
+                            Console.WriteLine(opie.Name + "      " + opie.IsHungry + "         " + opie.IsThirsty + "           " + opie.IsBored);
+
+                            Console.WriteLine("\nCurrent Status of Cats:");
+                            Console.WriteLine("Name    Is Hungry?    Is Thirsty?    Is Bored?");
+                            Console.WriteLine(buttons.Name + "    " + buttons.IsHungry + "         " + buttons.IsThirsty + "           " + buttons.IsBored);
+                            Console.WriteLine(bearCat.Name + "    " + bearCat.IsHungry + "         " + bearCat.IsThirsty + "           " + bearCat.IsBored);
+                            Console.WriteLine(gucci.Name + "     " + gucci.IsHungry + "         " + gucci.IsThirsty + "           " + gucci.IsBored);
                             break;
 
                         case 0:
@@ -195,7 +203,8 @@ namespace VPShelter
                 } while (managerChoice != 0);
             }
 
-            //volunteer choice/menu:
+            //volunteer choice variable/menu.  since volunteers interact with pets more frequently than manager,
+            //I chose to show the pet status display each time the menu is looped:
             else if (userChoice == 2)
             {
                 int volChoice;
@@ -300,11 +309,13 @@ namespace VPShelter
 
                         case 6:
                             //feed animal method
+                            sam.Feed();
 
                             break;
 
                         case 7:
                             //water animal method
+                            sam.Water();
                             break;
 
                         case 0:

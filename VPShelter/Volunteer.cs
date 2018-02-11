@@ -47,31 +47,14 @@ namespace VPShelter
         }
 
         //volunteer methods:
-        public void Feed(bool hunger)
+        public void Feed()
         {
-            if (hunger == true)
-            {
-                hunger = false;
-                Console.WriteLine("The pet is now full!");
-            }
-            else
-            {
-                Console.WriteLine("The pet is not hungry!");
-            }
+            Console.WriteLine("All pets have been fed, though some may still be hungry.");
         }
 
-        public void Water(bool thirst)
+        public void Water()
         {
-            if (thirst == true)
-            {
-                thirst = false;
-                Console.WriteLine("The pet is no longer thirsty!");
-            }
-            else
-            {
-                Console.WriteLine("The pet was not thirsty, but no peed all over it's cage!");
-                //make IsClean false;
-            }
+            Console.WriteLine("All pets have been watered, though some may still be thirsty.");
         }
 
         public void Play(bool bored)

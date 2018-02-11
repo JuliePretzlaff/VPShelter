@@ -15,7 +15,6 @@ namespace VPShelter
         public string Name { get; set; }
         public int Age { get; set; }
         public string Description { get; set; }
- 
 
         public bool IsHungry { get; set; }
         public bool IsThirsty { get; set; }
