@@ -57,16 +57,15 @@ namespace VPShelter
             Console.WriteLine("All pets have been watered, though some may still be thirsty.");
         }
 
-        public void Play(bool bored)
+        public bool Play(bool bored)
         {
             if (bored == true)
             {
-                bored = false;
-                Console.WriteLine("The pet had a fun time playing and is no longer bored!");
+                return false;
             }
             else
             {
-                Console.WriteLine("The pet wasn't even bored to begin with so is now hyper!");
+                return false;
             }
         }
     }

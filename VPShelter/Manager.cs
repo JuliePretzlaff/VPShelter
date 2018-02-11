@@ -33,7 +33,7 @@ namespace VPShelter
         public override void CheckOut()
         {
             DateTime signOut = DateTime.Now;
-            Console.WriteLine("You have punched in at " + signOut);
+            Console.WriteLine("You have punched out at " + signOut);
         }
 
         public override void Training()

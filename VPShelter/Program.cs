@@ -189,7 +189,7 @@ namespace VPShelter
                             Console.WriteLine("Name    Is Hungry?    Is Thirsty?    Is Bored?");
                             Console.WriteLine(buttons.Name + "    " + buttons.IsHungry + "         " + buttons.IsThirsty + "           " + buttons.IsBored);
                             Console.WriteLine(bearCat.Name + "    " + bearCat.IsHungry + "         " + bearCat.IsThirsty + "           " + bearCat.IsBored);
-                            Console.WriteLine(gucci.Name + "     " + gucci.IsHungry + "         " + gucci.IsThirsty + "           " + gucci.IsBored);
+                            Console.WriteLine(gucci.Name + "       " + gucci.IsHungry + "         " + gucci.IsThirsty + "           " + gucci.IsBored);
                             break;
 
                         case 0:
@@ -268,15 +268,19 @@ namespace VPShelter
                                 animalPlay = Console.ReadLine();
                                 if (animalPlay == "1")
                                 {
-                                    sam.Play(daisy.IsBored);
+                                    daisy.IsBored = sam.Play(daisy.IsBored);
+                                    Console.WriteLine("Daisy is no longer bored!");
+
                                 }
                                 else if (animalPlay == "2")
                                 {
-                                    sam.Play(trixie.IsBored);
+                                    trixie.IsBored=sam.Play(trixie.IsBored);
+                                    Console.WriteLine("Trixie is no longer bored!");
                                 }
                                 else if (animalPlay == "3")
                                 {
-                                    sam.Play(opie.IsBored);
+                                    opie.IsBored = sam.Play(opie.IsBored);
+                                    Console.WriteLine("Opie is no longer bored!");
                                 }
                                 else
                                 {
@@ -289,15 +293,18 @@ namespace VPShelter
                                 animalPlay = Console.ReadLine();
                                 if (animalPlay == "1")
                                 {
-                                    sam.Play(buttons.IsBored);
+                                    buttons.IsBored = sam.Play(buttons.IsBored);
+                                    Console.WriteLine("Buttons is no longer bored!");
                                 }
                                 else if (animalPlay == "2")
                                 {
-                                    sam.Play(bearCat.IsBored);
+                                    bearCat.IsBored = sam.Play(bearCat.IsBored);
+                                    Console.WriteLine("BearCat is no longer bored!");
                                 }
                                 else if (animalPlay == "3")
                                 {
-                                    sam.Play(gucci.IsBored);
+                                    gucci.IsBored = sam.Play(gucci.IsBored);
+                                    Console.WriteLine("Gucci is no longer bored!");
                                 }
                                 else
                                 {
