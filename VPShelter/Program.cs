@@ -111,41 +111,28 @@ namespace VPShelter
                             break;
 
                         case 4:
-                            //call adoption method
+                            //choose a pet for adoption and call adoption method
                             Console.WriteLine("Type \"1\" for dog and \"2\" for cat:");
                             string animalAdopt;
                             string petAdopt;
                             animalAdopt = Console.ReadLine().ToLower();
                             if (animalAdopt == "1")
                             {
-                                Console.WriteLine("Which dog is being adopted?  If you are unsure of the dog's names, please hit \"1\" to view the dog roster:");
+                                Console.WriteLine("Which dog is being adopted?");
+                                Console.WriteLine(daisy.Name + ": " + daisy.Description);
+                                Console.WriteLine(trixie.Name + ": " + trixie.Description);
+                                Console.WriteLine(opie.Name + ": " + opie.Description);
                                 petAdopt = Console.ReadLine();
-                                if (petAdopt == "1")
-                                {
-                                    foreach (string name in juliesVPShelter.DogRoster())
-                                    {
-                                        Console.WriteLine(name);
-                                    }
-                                    Console.WriteLine("Which dog is being adopted?");
-                                    petAdopt = Console.ReadLine();
-                                }
                                 julie.Adoption(petAdopt);
-
                             }
                             else if (animalAdopt == "2")
                             {
-                                Console.WriteLine("Which cat is being adopted?  If you are unsure of the cat's names, please hit \"1\" to view the cat roster:");
+                                Console.WriteLine("Which cat is being adopted? Please type their name: ");
+                                Console.WriteLine(buttons.Name +": " + buttons.Description);
+                                Console.WriteLine(bearCat.Name + ": " + bearCat.Description);
+                                Console.WriteLine(gucci.Name + ": " + gucci.Description);
                                 petAdopt = Console.ReadLine();
-                                if (petAdopt == "1")
-                                {
-                                    foreach (string name in juliesVPShelter.CatRoster())
-                                    {
-                                        Console.WriteLine(name);
-                                    }
-                                    Console.WriteLine("Which cat is being adopted?");
-                                    petAdopt = Console.ReadLine();
-                                }
-                                julie.Adoption(petAdopt);
+;                                julie.Adoption(petAdopt);
                             }
                             break;
 
@@ -189,7 +176,7 @@ namespace VPShelter
                             break;
 
                         case 6:
-                            //create method to view adoption rate 
+                            // method to view adoption rate 
                             julie.ViewScore();
                             break;
 
@@ -214,20 +201,33 @@ namespace VPShelter
                 int volChoice;
                 do
                 {
-                    Console.WriteLine("\nVolunteer Menu:");
+                    Console.WriteLine("\nVolunteer Menu (please see all current pet conditions below: ");
                     Console.WriteLine("Sign in: 1");
                     Console.WriteLine("Sign out: 2");
                     Console.WriteLine("Attend a volunteer training: 3");
                     Console.WriteLine("View volunteer level: 4");
-                    Console.WriteLine("View animal statuses: 5");
-                    Console.WriteLine("Clean cages: 6");
-                    Console.WriteLine("Feed animals: 7");
-                    Console.WriteLine("Water animals: 8:");
+                    Console.WriteLine("Play with an animal: 5");
+                    Console.WriteLine("Feed animals: 6");
+                    Console.WriteLine("Water animals: 7:");
                     Console.WriteLine("Exit program: 0");
+
+                    Console.WriteLine("\nCurrent Status of Dogs:");
+                    //Console.WriteLine(daisy.Name + ": Is hungry?" + daisy.IsHungry + " Is thirsty? " + daisy.IsThirsty + daisy.IsBored);
+                    Console.WriteLine("Name    Is Hungry?    Is Thirsty?    Is Bored?");
+                    Console.WriteLine("______________________________________________");
+                    Console.WriteLine(daisy.Name+"     "+daisy.IsHungry +"         "+daisy.IsThirsty+"           "+daisy.IsBored);
+                    Console.WriteLine(trixie.Name + "    " + trixie.IsHungry + "         " + trixie.IsThirsty + "           " + trixie.IsBored);
+                    Console.WriteLine(opie.Name + "      " + opie.IsHungry + "         " + opie.IsThirsty + "           " + opie.IsBored);
+
+                    Console.WriteLine("\nCurrent Status of Cats:");
+                    Console.WriteLine("Name    Is Hungry?    Is Thirsty?    Is Bored?");
+                    Console.WriteLine(buttons.Name + "    " + buttons.IsHungry + "         " + buttons.IsThirsty + "           " + buttons.IsBored);
+                    Console.WriteLine(bearCat.Name + "    " + bearCat.IsHungry + "         " + bearCat.IsThirsty + "           " + bearCat.IsBored);
+                    Console.WriteLine(gucci.Name + "     " + gucci.IsHungry + "         " + gucci.IsThirsty + "           " + gucci.IsBored);
 
                     volChoice = int.Parse(Console.ReadLine());
 
-                    switch (userChoice)
+                    switch (volChoice)
                     {
                         case 1:
                             //checkin method
@@ -250,19 +250,61 @@ namespace VPShelter
                             break;
 
                         case 5:
-                            //need to make animal status method
+                            //select an animal to play with and method to play with it
+                            Console.WriteLine("Would you like to play with a dog or a cat?  Press \"1\" for dog, \"2\" for cat: ");
+                            string animalPlay = Console.ReadLine();
+                            if (animalPlay == "1")
+                            {
+                                Console.WriteLine("Which dog would you like to play with: \"1\" for Daisy, \"2\" for Trixie, or \"3\" for Opie?");
+                                animalPlay = Console.ReadLine();
+                                if (animalPlay == "1")
+                                {
+                                    sam.Play(daisy.IsBored);
+                                }
+                                else if (animalPlay == "2")
+                                {
+                                    sam.Play(trixie.IsBored);
+                                }
+                                else if (animalPlay == "3")
+                                {
+                                    sam.Play(opie.IsBored);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Please choose an existing pet!");
+                                }
+                            }
+                            if (animalPlay == "2")
+                            {
+                                Console.WriteLine("Which cat would you like to play with: \"1\" for Buttons, \"2\" for BearCat, or \"3\" for Gucci?");
+                                animalPlay = Console.ReadLine();
+                                if (animalPlay == "1")
+                                {
+                                    sam.Play(buttons.IsBored);
+                                }
+                                else if (animalPlay == "2")
+                                {
+                                    sam.Play(bearCat.IsBored);
+                                }
+                                else if (animalPlay == "3")
+                                {
+                                    sam.Play(gucci.IsBored);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Please choose an existing pet!");
+                                }
+                            }
+
                             break;
 
                         case 6:
-                            //clean cage method (on which pet?)
+                            //feed animal method
+
                             break;
 
                         case 7:
-                            //feed animal method(on which pet?)
-                            break;
-
-                        case 8:
-                            //water animal method (on which pet?)
+                            //water animal method
                             break;
 
                         case 0:
@@ -277,6 +319,7 @@ namespace VPShelter
             }
             else
                 Console.WriteLine("Please enter a valid response.");
+        
         }
     }
 }

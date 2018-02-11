@@ -74,16 +74,16 @@ namespace VPShelter
             }
         }
 
-        public void Clean(bool clean)
+        public void Play(bool bored)
         {
-            if (clean == true)
+            if (bored == true)
             {
-                clean = false;
-                Console.WriteLine("The pet cage is now clean!");
+                bored = false;
+                Console.WriteLine("The pet had a fun time playing and is no longer bored!");
             }
             else
             {
-                Console.WriteLine("The pet cage doesn't need to be cleaned!");
+                Console.WriteLine("The pet wasn't even bored to begin with so is now hyper!");
             }
         }
     }

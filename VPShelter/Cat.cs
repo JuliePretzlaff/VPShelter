@@ -9,7 +9,7 @@ namespace VPShelter
     public class Cat : VirtualPet
     {
         //fields/properties come from VirtualPet class
-
+        //properties (with invisible fields) specific to this class:
         public string Type { get; set; }
         public string Diet { get; set; }
 
